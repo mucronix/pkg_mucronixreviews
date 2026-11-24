@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="review">
+		<field
+			name="id"
+			type="hidden"
+			filter="uint"
+		/>
+		<field
+			name="rating"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_RATING_LABEL"
+			required="true"
+			validate="options"
+			>
+			<option value="5">5</option>
+			<option value="4">4</option>
+			<option value="3">3</option>
+			<option value="2">2</option>
+			<option value="1">1</option>
+		</field>
+		<field
+			name="text"
+			type="textarea"
+			label="COM_MUCRONIXREVIEWS_FIELD_TEXT_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_TEXT_DESC"
+			rows="12"
+			maxlength="16000"
+			filter="raw"
+		/>
+		<field
+			name="state"
+			type="list"
+			label="JSTATUS"
+			validate="options"
+			>
+			<option value="1">COM_MUCRONIXREVIEWS_STATE_PUBLISHED</option>
+			<option value="0">COM_MUCRONIXREVIEWS_STATE_PENDING</option>
+			<option value="-1">COM_MUCRONIXREVIEWS_STATE_REJECTED</option>
+			<option value="-3">COM_MUCRONIXREVIEWS_STATE_SPAM</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+	</fieldset>
+</form>

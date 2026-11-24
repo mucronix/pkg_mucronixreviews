@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Update server for Mucronix Reviews (pkg_mucronixreviews).
+
+	Served straight from the public repository, branch main:
+	https://raw.githubusercontent.com/mucronix/pkg_mucronixreviews/main/update/pkg_mucronixreviews.xml
+	That address is the one in the manifest of the package, so pushing this file to main is what publishes it.
+	It must not reach main before the release it points at exists and its checksum is filled in.
+	This file is not part of the installable package.
+
+	<sha256> is the checksum of the archive downloaded back from the release, not of the local build;
+	Joomla compares it before installing an update. It is added only then: an empty element does not
+	warn, it makes Joomla refuse the update.
+
+	The package is installed for the site: <client>site</client>, or Joomla looks for it among the
+	extensions of the administrator and never offers the update.
+	targetplatform version is a regular expression anchored at the front: 6\.[0-9]+ covers the whole
+	6 branch and stops at 7. php_minimum is read only from here, on update; the install script covers
+	a first install.
+-->
+<updates>
+	<update>
+		<name>Mucronix Reviews</name>
+		<description>Star ratings and text reviews by registered users, with moderation</description>
+		<element>pkg_mucronixreviews</element>
+		<type>package</type>
+		<client>site</client>
+		<version>0.6.2</version>
+		<infourl title="Mucronix Reviews">https://github.com/mucronix/pkg_mucronixreviews</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/mucronix/pkg_mucronixreviews/releases/download/v0.6.2/pkg_mucronixreviews-0.6.2.zip</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer>Mucronix</maintainer>
+		<maintainerurl>https://mucronix.com</maintainerurl>
+		<targetplatform name="joomla" version="6\.[0-9]+"/>
+		<php_minimum>8.3.0</php_minimum>
+	</update>
+</updates>

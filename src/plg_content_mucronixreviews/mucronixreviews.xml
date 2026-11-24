@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="content" method="upgrade">
+	<name>plg_content_mucronixreviews</name>
+	<author>Mucronix</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>(C) 2026 Mucronix</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@mucronix.com</authorEmail>
+	<authorUrl>https://mucronix.com</authorUrl>
+	<version>0.6.2</version>
+	<description>PLG_CONTENT_MUCRONIXREVIEWS_XML_DESCRIPTION</description>
+	<namespace path="src">Mucronix\Plugin\Content\MucronixReviews</namespace>
+	<files>
+		<filename>LICENSE.txt</filename>
+		<folder plugin="mucronixreviews">services</folder>
+		<folder>src</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/plg_content_mucronixreviews.ini</language>
+		<language tag="en-GB">language/en-GB/plg_content_mucronixreviews.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU/plg_content_mucronixreviews.ini</language>
+		<language tag="ru-RU">language/ru-RU/plg_content_mucronixreviews.sys.ini</language>
+		<language tag="uk-UA">language/uk-UA/plg_content_mucronixreviews.ini</language>
+		<language tag="uk-UA">language/uk-UA/plg_content_mucronixreviews.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="settings_note"
+					type="note"
+					class="alert alert-info w-100"
+					label="PLG_CONTENT_MUCRONIXREVIEWS_SETTINGS_LABEL"
+					description="PLG_CONTENT_MUCRONIXREVIEWS_SETTINGS_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,4 @@
+# Build results and earlier archives
+build/
+archive/
+*.zip

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<inlinehelp button="show"/>
+	<fieldset
+		name="reviews"
+		label="COM_MUCRONIXREVIEWS_FIELDSET_REVIEWS_LABEL"
+		addruleprefix="Mucronix\Component\MucronixReviews\Administrator\Rule"
+		>
+		<field
+			name="mode"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_MODE_LABEL"
+			default="full"
+			validate="options"
+			>
+			<option value="stars">COM_MUCRONIXREVIEWS_FIELD_MODE_STARS</option>
+			<option value="full">COM_MUCRONIXREVIEWS_FIELD_MODE_FULL</option>
+		</field>
+		<field
+			name="text_mode"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_TEXT_MODE_LABEL"
+			default="optional"
+			validate="options"
+			showon="mode:full"
+			>
+			<option value="off">COM_MUCRONIXREVIEWS_OPTION_OFF</option>
+			<option value="optional">COM_MUCRONIXREVIEWS_OPTION_OPTIONAL</option>
+			<option value="required">COM_MUCRONIXREVIEWS_OPTION_REQUIRED</option>
+		</field>
+		<field
+			name="text_min"
+			type="number"
+			label="COM_MUCRONIXREVIEWS_FIELD_TEXT_MIN_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_TEXT_MIN_DESC"
+			default="20"
+			min="0"
+			step="1"
+			required="true"
+			validate="textmin"
+		/>
+		<field
+			name="text_max"
+			type="number"
+			label="COM_MUCRONIXREVIEWS_FIELD_TEXT_MAX_LABEL"
+			default="3000"
+			min="1"
+			max="16000"
+			step="1"
+			required="true"
+			validate="wholenumber"
+		/>
+		<field
+			name="allowed_groups"
+			type="usergrouplist"
+			label="COM_MUCRONIXREVIEWS_FIELD_ALLOWED_GROUPS_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_ALLOWED_GROUPS_DESC"
+			multiple="true"
+			layout="joomla.form.field.list-fancy-select"
+			default="2"
+			required="true"
+			filter="intarray"
+			validate="groups"
+		/>
+		<field
+			name="allow_edit"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="COM_MUCRONIXREVIEWS_FIELD_ALLOW_EDIT_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_ALLOW_EDIT_DESC"
+			default="1"
+			filter="boolean"
+			validate="options"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field
+			name="user_delete"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_USER_DELETE_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_USER_DELETE_DESC"
+			default="keep"
+			validate="options"
+			>
+			<option value="keep">COM_MUCRONIXREVIEWS_FIELD_USER_DELETE_KEEP</option>
+			<option value="delete">COM_MUCRONIXREVIEWS_FIELD_USER_DELETE_DELETE</option>
+		</field>
+	</fieldset>
+	<fieldset
+		name="moderation"
+		label="COM_MUCRONIXREVIEWS_FIELDSET_MODERATION_LABEL"
+		addruleprefix="Mucronix\Component\MucronixReviews\Administrator\Rule"
+		>
+		<field
+			name="moderation"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_MODERATION_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_MODERATION_DESC"
+			default="text"
+			validate="options"
+			>
+			<option value="all">COM_MUCRONIXREVIEWS_FIELD_MODERATION_ALL</option>
+			<option value="text">COM_MUCRONIXREVIEWS_FIELD_MODERATION_TEXT</option>
+			<option value="none">COM_MUCRONIXREVIEWS_FIELD_MODERATION_NONE</option>
+		</field>
+		<field
+			name="links"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_LINKS_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_LINKS_DESC"
+			default="moderate"
+			validate="options"
+			>
+			<option value="allow">COM_MUCRONIXREVIEWS_FIELD_LINKS_ALLOW</option>
+			<option value="moderate">COM_MUCRONIXREVIEWS_FIELD_LINKS_MODERATE</option>
+			<option value="forbid">COM_MUCRONIXREVIEWS_FIELD_LINKS_FORBID</option>
+		</field>
+		<field
+			name="daily_limit"
+			type="number"
+			label="COM_MUCRONIXREVIEWS_FIELD_DAILY_LIMIT_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_DAILY_LIMIT_DESC"
+			default="10"
+			min="0"
+			step="1"
+			required="true"
+			validate="wholenumber"
+		/>
+		<field
+			name="notify"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="COM_MUCRONIXREVIEWS_FIELD_NOTIFY_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_NOTIFY_DESC"
+			default="1"
+			filter="integer"
+			validate="notify"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field
+			name="notify_groups"
+			type="usergrouplist"
+			label="COM_MUCRONIXREVIEWS_FIELD_NOTIFY_GROUPS_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_NOTIFY_GROUPS_DESC"
+			multiple="true"
+			layout="joomla.form.field.list-fancy-select"
+			default="8"
+			filter="intarray"
+			validate="groups"
+			allowempty="true"
+			showon="notify:1"
+		/>
+		<field
+			name="notify_emails"
+			type="textarea"
+			label="COM_MUCRONIXREVIEWS_FIELD_NOTIFY_EMAILS_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_NOTIFY_EMAILS_DESC"
+			rows="3"
+			filter="string"
+			validate="emails"
+			showon="notify:1"
+		/>
+		<field
+			name="notify_hourly"
+			type="number"
+			label="COM_MUCRONIXREVIEWS_FIELD_NOTIFY_HOURLY_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_NOTIFY_HOURLY_DESC"
+			default="20"
+			min="0"
+			step="1"
+			required="true"
+			validate="wholenumber"
+			showon="notify:1"
+		/>
+		<field
+			name="notify_note"
+			type="note"
+			description="COM_MUCRONIXREVIEWS_FIELD_NOTIFY_NOTE"
+			class="alert alert-info w-100"
+			showon="notify:1"
+		/>
+	</fieldset>
+	<fieldset
+		name="display"
+		label="COM_MUCRONIXREVIEWS_FIELDSET_DISPLAY_LABEL"
+		addruleprefix="Mucronix\Component\MucronixReviews\Administrator\Rule"
+		>
+		<field
+			name="rounding"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_ROUNDING_LABEL"
+			default="half"
+			validate="options"
+			>
+			<option value="half">COM_MUCRONIXREVIEWS_FIELD_ROUNDING_HALF</option>
+			<option value="whole">COM_MUCRONIXREVIEWS_FIELD_ROUNDING_WHOLE</option>
+		</field>
+		<field
+			name="show_date"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="COM_MUCRONIXREVIEWS_FIELD_SHOW_DATE_LABEL"
+			default="1"
+			filter="boolean"
+			validate="options"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field
+			name="date_format"
+			type="text"
+			label="COM_MUCRONIXREVIEWS_FIELD_DATE_FORMAT_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_DATE_FORMAT_DESC"
+			default="DATE_FORMAT_LC3"
+			maxlength="50"
+			filter="string"
+			showon="show_date:1"
+		/>
+		<field
+			name="list_limit"
+			type="number"
+			label="COM_MUCRONIXREVIEWS_FIELD_LIST_LIMIT_LABEL"
+			default="10"
+			min="1"
+			step="1"
+			required="true"
+			validate="wholenumber"
+		/>
+		<field
+			name="list_order"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_LIST_ORDER_LABEL"
+			default="newest"
+			validate="options"
+			>
+			<option value="newest">COM_MUCRONIXREVIEWS_FIELD_LIST_ORDER_NEWEST</option>
+			<option value="highest">COM_MUCRONIXREVIEWS_FIELD_LIST_ORDER_HIGHEST</option>
+			<option value="lowest">COM_MUCRONIXREVIEWS_FIELD_LIST_ORDER_LOWEST</option>
+		</field>
+		<field
+			name="control_style"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_CONTROL_STYLE_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_CONTROL_STYLE_DESC"
+			default="auto"
+			validate="options"
+			>
+			<option value="auto">COM_MUCRONIXREVIEWS_FIELD_CONTROL_STYLE_AUTO</option>
+			<option value="own">COM_MUCRONIXREVIEWS_FIELD_CONTROL_STYLE_OWN</option>
+		</field>
+	</fieldset>
+	<fieldset
+		name="articles"
+		label="COM_MUCRONIXREVIEWS_FIELDSET_ARTICLES_LABEL"
+		>
+		<field
+			name="article_categories"
+			type="category"
+			label="COM_MUCRONIXREVIEWS_FIELD_ARTICLE_CATEGORIES_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_ARTICLE_CATEGORIES_DESC"
+			extension="com_content"
+			multiple="true"
+			layout="joomla.form.field.list-fancy-select"
+			filter="intarray"
+		/>
+		<field
+			name="article_position"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_ARTICLE_POSITION_LABEL"
+			default="after"
+			validate="options"
+			>
+			<option value="before">COM_MUCRONIXREVIEWS_FIELD_ARTICLE_POSITION_BEFORE</option>
+			<option value="after">COM_MUCRONIXREVIEWS_FIELD_ARTICLE_POSITION_AFTER</option>
+		</field>
+		<field
+			name="article_show"
+			type="list"
+			label="COM_MUCRONIXREVIEWS_FIELD_ARTICLE_SHOW_LABEL"
+			default="full"
+			validate="options"
+			>
+			<option value="summary">COM_MUCRONIXREVIEWS_FIELD_ARTICLE_SHOW_SUMMARY</option>
+			<option value="list">COM_MUCRONIXREVIEWS_FIELD_ARTICLE_SHOW_LIST</option>
+			<option value="full">COM_MUCRONIXREVIEWS_FIELD_ARTICLE_SHOW_FULL</option>
+		</field>
+		<field
+			name="shortcodes_note"
+			type="note"
+			class="alert alert-info w-100"
+			label="COM_MUCRONIXREVIEWS_SHORTCODES_LABEL"
+			description="COM_MUCRONIXREVIEWS_SHORTCODES_DESC"
+		/>
+	</fieldset>
+	<fieldset
+		name="schema"
+		label="COM_MUCRONIXREVIEWS_FIELDSET_SCHEMA_LABEL"
+		addfieldprefix="Mucronix\Component\MucronixReviews\Administrator\Field"
+		>
+		<field
+			name="schema_contexts"
+			type="contexts"
+			label="COM_MUCRONIXREVIEWS_FIELD_SCHEMA_CONTEXTS_LABEL"
+			description="COM_MUCRONIXREVIEWS_FIELD_SCHEMA_CONTEXTS_DESC"
+		/>
+	</fieldset>
+	<fieldset
+		name="data"
+		label="COM_MUCRONIXREVIEWS_FIELDSET_DATA_LABEL"
+		>
+		<field
+			name="keep_data"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="COM_MUCRONIXREVIEWS_FIELD_KEEP_DATA_LABEL"
+			default="1"
+			filter="boolean"
+			validate="options"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field
+			name="keep_data_note"
+			type="note"
+			class="alert alert-warning w-100"
+			description="COM_MUCRONIXREVIEWS_FIELD_KEEP_DATA_NOTE"
+		/>
+	</fieldset>
+	<fieldset
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC"
+		>
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			filter="rules"
+			validate="rules"
+			component="com_mucronixreviews"
+			section="component"
+		/>
+	</fieldset>
+</config>

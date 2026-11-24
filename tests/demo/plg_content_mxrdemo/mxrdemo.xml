@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="content" method="upgrade">
+	<name>Mucronix Reviews - тестовые отзывы</name>
+	<author>Mucronix</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>(C) 2026 Mucronix</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.0</version>
+	<description>Только для локальной проверки. Создаёт тестовые отзывы для Mucronix Reviews. Перед удалением плагина удалите их кнопкой в настройках плагина.</description>
+	<namespace path="src">Mucronix\Plugin\Content\Mxrdemo</namespace>
+	<files>
+		<folder plugin="mxrdemo">services</folder>
+		<folder>src</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="Mucronix\Plugin\Content\Mxrdemo\Field">
+				<field name="buttons" type="demobuttons" label="Тестовые отзывы" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

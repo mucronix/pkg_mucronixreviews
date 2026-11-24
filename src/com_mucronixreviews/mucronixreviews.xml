@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" method="upgrade">
+	<name>com_mucronixreviews</name>
+	<author>Mucronix</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>(C) 2026 Mucronix</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@mucronix.com</authorEmail>
+	<authorUrl>https://mucronix.com</authorUrl>
+	<version>0.6.2</version>
+	<description>COM_MUCRONIXREVIEWS_XML_DESCRIPTION</description>
+	<namespace path="src">Mucronix\Component\MucronixReviews</namespace>
+	<scriptfile>script.php</scriptfile>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	<files folder="site">
+		<folder>layouts</folder>
+		<folder>src</folder>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB/com_mucronixreviews.ini</language>
+		<language tag="ru-RU">language/ru-RU/com_mucronixreviews.ini</language>
+		<language tag="uk-UA">language/uk-UA/com_mucronixreviews.ini</language>
+	</languages>
+	<media destination="com_mucronixreviews" folder="media">
+		<filename>joomla.asset.json</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+	<administration>
+		<menu link="option=com_mucronixreviews">COM_MUCRONIXREVIEWS</menu>
+		<submenu>
+			<menu link="option=com_mucronixreviews&amp;view=reviews&amp;filter[state]=">COM_MUCRONIXREVIEWS_MENU_REVIEWS</menu>
+			<menu link="option=com_mucronixreviews&amp;view=reviews&amp;filter[state]=0">COM_MUCRONIXREVIEWS_MENU_PENDING</menu>
+			<menu link="option=com_config&amp;view=component&amp;component=com_mucronixreviews">COM_MUCRONIXREVIEWS_MENU_OPTIONS</menu>
+		</submenu>
+		<files folder="admin">
+			<filename>LICENSE.txt</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<folder>forms</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/com_mucronixreviews.ini</language>
+			<language tag="en-GB">language/en-GB/com_mucronixreviews.sys.ini</language>
+			<language tag="ru-RU">language/ru-RU/com_mucronixreviews.ini</language>
+			<language tag="ru-RU">language/ru-RU/com_mucronixreviews.sys.ini</language>
+			<language tag="uk-UA">language/uk-UA/com_mucronixreviews.ini</language>
+			<language tag="uk-UA">language/uk-UA/com_mucronixreviews.sys.ini</language>
+		</languages>
+	</administration>
+</extension>

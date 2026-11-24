@@ -1,0 +1,308 @@
+/**
+ * Mucronix Reviews
+ * (C) 2026 Mucronix
+ * License GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * The variables can be set anywhere above, in the CSS of the template for example.
+ */
+.mxr-summary,
+.mxr-block {
+  --mxr-star-color-default: #e8a100;
+  --mxr-star-empty-default: #c9c9c9;
+  --mxr-star-shape: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.8l3.1 6.6 7.1.9-5.2 5 1.3 7.1L12 17.9l-6.3 3.5L7 14.3l-5.2-5 7.1-.9z'/%3E%3C/svg%3E");
+}
+
+.mxr-block {
+  margin: var(--mxr-block-margin, 2rem 0);
+}
+
+/* The block does not take the look of the text around it; the colour is inherited unless it is set */
+.mxr-block {
+  color: var(--mxr-text-color, inherit);
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.mxr-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Five stars in one element: the shape is a mask, the filled part is a gradient */
+.mxr-stars {
+  --mxr-fill: 0%;
+  display: inline-block;
+  width: calc(5 * var(--mxr-star-size, 1.25em));
+  height: var(--mxr-star-size, 1.25em);
+  vertical-align: middle;
+  background: linear-gradient(
+    to right,
+    var(--mxr-star-color, var(--mxr-star-color-default)) var(--mxr-fill),
+    var(--mxr-star-empty-color, var(--mxr-star-empty-default)) var(--mxr-fill)
+  );
+  -webkit-mask: var(--mxr-star-shape) 0 50% / var(--mxr-star-size, 1.25em) var(--mxr-star-size, 1.25em) repeat-x;
+  mask: var(--mxr-star-shape) 0 50% / var(--mxr-star-size, 1.25em) var(--mxr-star-size, 1.25em) repeat-x;
+}
+
+[dir="rtl"] .mxr-stars {
+  transform: scaleX(-1);
+}
+
+.mxr-stars--5 { --mxr-fill: 10%; }
+.mxr-stars--10 { --mxr-fill: 20%; }
+.mxr-stars--15 { --mxr-fill: 30%; }
+.mxr-stars--20 { --mxr-fill: 40%; }
+.mxr-stars--25 { --mxr-fill: 50%; }
+.mxr-stars--30 { --mxr-fill: 60%; }
+.mxr-stars--35 { --mxr-fill: 70%; }
+.mxr-stars--40 { --mxr-fill: 80%; }
+.mxr-stars--45 { --mxr-fill: 90%; }
+.mxr-stars--50 { --mxr-fill: 100%; }
+
+/* Windows high contrast: a mask has no colours to show */
+@media (forced-colors: active) {
+  .mxr-stars {
+    forced-color-adjust: none;
+  }
+}
+
+.mxr-summary {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25em 0.6em;
+}
+
+.mxr-summary__count {
+  color: var(--mxr-muted-color, inherit);
+  opacity: var(--mxr-muted-opacity, 0.8);
+}
+
+.mxr-form,
+.mxr-notice,
+.mxr-list {
+  margin: var(--mxr-gap, 1rem) 0 0;
+}
+
+.mxr-status {
+  margin: 0 0 var(--mxr-gap, 1rem);
+}
+
+/* The button and, beside it, why the own review is not shown: both open the form */
+.mxr-form > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em 1em;
+  width: fit-content;
+  max-width: 100%;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* The own look of the buttons, the fields and the messages; a template of YOOtheme Pro gets those of UIkit instead */
+.mxr-block:not(.mxr-block--uikit) .mxr-form__button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  color: var(--mxr-button-color, inherit);
+  background: var(--mxr-button-background, transparent);
+  border: 1px solid var(--mxr-button-border-color, currentcolor);
+  border-radius: var(--mxr-radius, 4px);
+}
+
+.mxr-form__state {
+  color: var(--mxr-state-color, inherit);
+  font-size: 0.875em;
+  opacity: var(--mxr-muted-opacity, 0.8);
+}
+
+.mxr-form > summary::-webkit-details-marker {
+  display: none;
+}
+
+.mxr-form form {
+  max-width: var(--mxr-form-width, 40rem);
+  margin: var(--mxr-gap, 1rem) 0 0;
+}
+
+.mxr-field {
+  min-width: 0;
+  margin: 0 0 var(--mxr-gap, 1rem);
+  padding: 0;
+  border: 0;
+}
+
+.mxr-field > label,
+.mxr-field > legend {
+  display: block;
+  margin: 0 0 0.35em;
+  padding: 0;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.mxr-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.mxr-block:not(.mxr-block--uikit) .mxr-field textarea {
+  padding: 0.5em 0.75em;
+  font: inherit;
+  color: inherit;
+  background: var(--mxr-field-background, transparent);
+  border: 1px solid var(--mxr-field-border-color, #8a8a8a);
+  border-radius: var(--mxr-radius, 4px);
+}
+
+.mxr-hint {
+  margin: 0.25em 0 0;
+  font-size: 0.875em;
+  opacity: var(--mxr-muted-opacity, 0.8);
+}
+
+.mxr-rate {
+  display: inline-flex;
+}
+
+.mxr-rate label {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0 0.1em;
+  cursor: pointer;
+}
+
+.mxr-rate input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.mxr-rate__star {
+  display: block;
+  width: var(--mxr-rate-size, 2em);
+  height: var(--mxr-rate-size, 2em);
+  background: var(--mxr-star-empty-color, var(--mxr-star-empty-default));
+  -webkit-mask: var(--mxr-star-shape) center / contain no-repeat;
+  mask: var(--mxr-star-shape) center / contain no-repeat;
+}
+
+.mxr-rate label:has(input:checked) .mxr-rate__star,
+.mxr-rate label:has(~ label input:checked) .mxr-rate__star {
+  background: var(--mxr-star-color, var(--mxr-star-color-default));
+}
+
+.mxr-rate:hover label .mxr-rate__star {
+  background: var(--mxr-star-color, var(--mxr-star-color-default));
+}
+
+.mxr-rate:hover label:hover ~ label .mxr-rate__star {
+  background: var(--mxr-star-empty-color, var(--mxr-star-empty-default));
+}
+
+.mxr-rate label:has(input:focus-visible) {
+  outline: 2px solid currentcolor;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (forced-colors: active) {
+  .mxr-rate__star {
+    forced-color-adjust: none;
+  }
+}
+
+.mxr-block:not(.mxr-block--uikit) .mxr-submit,
+.mxr-block:not(.mxr-block--uikit) .mxr-more {
+  padding: 0.5em 1.25em;
+  font: inherit;
+  color: var(--mxr-button-color, inherit);
+  background: var(--mxr-button-background, transparent);
+  border: 1px solid var(--mxr-button-border-color, currentcolor);
+  border-radius: var(--mxr-radius, 4px);
+  cursor: pointer;
+}
+
+.mxr-more {
+  margin: var(--mxr-gap, 1rem) 0 0;
+}
+
+.mxr-more[hidden] {
+  display: none;
+}
+
+.mxr-submit[disabled],
+.mxr-more[disabled] {
+  opacity: 0.5;
+  cursor: progress;
+}
+
+.mxr-status:empty {
+  display: none;
+}
+
+.mxr-block:not(.mxr-block--uikit) .mxr-status,
+.mxr-block:not(.mxr-block--uikit) .mxr-notice {
+  padding: 0.6em 1em;
+  border: 1px solid var(--mxr-notice-border-color, currentcolor);
+  border-radius: var(--mxr-radius, 4px);
+}
+
+.mxr-block:not(.mxr-block--uikit) .mxr-status--error {
+  border-color: var(--mxr-error-color, #b3261e);
+}
+
+.mxr-block:not(.mxr-block--uikit) .mxr-status--success {
+  border-color: var(--mxr-success-color, #2e7d32);
+}
+
+.mxr-list {
+  padding: 0;
+  list-style: none;
+}
+
+.mxr-review {
+  margin: 0;
+  padding: var(--mxr-gap, 1rem) 0;
+  border-top: 1px solid var(--mxr-line-color, rgba(128, 128, 128, 0.35));
+}
+
+.mxr-review__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25em 0.75em;
+}
+
+.mxr-review__author {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.mxr-review__date {
+  font-size: 0.875em;
+  opacity: var(--mxr-muted-opacity, 0.8);
+}
+
+.mxr-review__text {
+  margin: 0.4em 0 0;
+}
+
+.mxr-review__text {
+  overflow-wrap: anywhere;
+}

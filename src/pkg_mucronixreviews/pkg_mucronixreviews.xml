@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="package" method="upgrade">
+	<name>pkg_mucronixreviews</name>
+	<packagename>mucronixreviews</packagename>
+	<author>Mucronix</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>(C) 2026 Mucronix</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@mucronix.com</authorEmail>
+	<authorUrl>https://mucronix.com</authorUrl>
+	<version>0.6.2</version>
+	<description>PKG_MUCRONIXREVIEWS_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<blockChildUninstall>true</blockChildUninstall>
+	<changelogurl>https://raw.githubusercontent.com/mucronix/pkg_mucronixreviews/main/update/changelog.xml</changelogurl>
+	<updateservers>
+		<server type="extension" priority="1" name="Mucronix Reviews">https://raw.githubusercontent.com/mucronix/pkg_mucronixreviews/main/update/pkg_mucronixreviews.xml</server>
+	</updateservers>
+	<files folder="packages">
+		<file type="component" id="com_mucronixreviews">com_mucronixreviews.zip</file>
+		<file type="plugin" id="mucronixreviews" group="system">plg_system_mucronixreviews.zip</file>
+		<file type="plugin" id="mucronixreviews" group="content">plg_content_mucronixreviews.zip</file>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/pkg_mucronixreviews.ini</language>
+		<language tag="en-GB">en-GB/pkg_mucronixreviews.sys.ini</language>
+		<language tag="ru-RU">ru-RU/pkg_mucronixreviews.ini</language>
+		<language tag="ru-RU">ru-RU/pkg_mucronixreviews.sys.ini</language>
+		<language tag="uk-UA">uk-UA/pkg_mucronixreviews.ini</language>
+		<language tag="uk-UA">uk-UA/pkg_mucronixreviews.sys.ini</language>
+	</languages>
+</extension>

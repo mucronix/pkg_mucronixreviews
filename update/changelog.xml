@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Changelog of Mucronix Reviews in the format of Joomla: the manifest of the package names this file
+	in <changelogurl>, and "System - Manage - Extensions" shows the entry of the version on offer.
+	Served from the public repository, branch main, beside the update file.
+	This file is not part of the installable package.
+-->
+<changelogs>
+	<changelog>
+		<element>pkg_mucronixreviews</element>
+		<type>package</type>
+		<version>1.0.0</version>
+		<addition>
+			<item>Star ratings from 1 to 5 and text reviews by registered users of chosen groups, one review for each user and object.</item>
+			<item>Moderation: all new reviews, only those with a text, or none; links in reviews allowed, sent to moderation or forbidden; a daily limit for each user.</item>
+			<item>An email to the moderators when a review comes to wait for them, with a limit of emails per hour.</item>
+			<item>The block under Joomla articles in chosen categories and the shortcode {mucronixreviews}.</item>
+			<item>YOOtheme Pro: the element "Mucronix Reviews", the fields of the rating and the list of reviews in the dynamic content.</item>
+			<item>The rating and the reviews in the Schema.org markup that Joomla builds.</item>
+			<item>English, Russian and Ukrainian.</item>
+		</addition>
+	</changelog>
+</changelogs>

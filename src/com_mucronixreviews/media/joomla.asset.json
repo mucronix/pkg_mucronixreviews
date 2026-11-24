@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_mucronixreviews",
+  "version": "0.6.2",
+  "description": "Mucronix Reviews",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "com_mucronixreviews.reviews",
+      "type": "style",
+      "uri": "com_mucronixreviews/reviews.css"
+    },
+    {
+      "name": "com_mucronixreviews.reviews",
+      "type": "script",
+      "uri": "com_mucronixreviews/reviews.js",
+      "attributes": {
+        "defer": true
+      }
+    }
+  ]
+}

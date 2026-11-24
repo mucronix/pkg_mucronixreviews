@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="content" method="upgrade">
+	<name>plg_content_mxrtest</name>
+	<version>1.0.0</version>
+	<namespace path="src">Mucronix\Plugin\Content\Mxrtest</namespace>
+	<files>
+		<folder plugin="mxrtest">services</folder>
+		<folder>src</folder>
+	</files>
+</extension>
