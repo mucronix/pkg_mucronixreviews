@@ -30,6 +30,7 @@
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/mucronix/pkg_mucronixreviews/releases/download/v1.0.0/pkg_mucronixreviews-1.0.0.zip</downloadurl>
 		</downloads>
+		<sha256>b428b59225226e8f226c2d9370f90d79df93a4c76a6873e160b723cab4ec5072</sha256>
 		<tags>
 			<tag>stable</tag>
 		</tags>
