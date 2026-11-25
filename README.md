@@ -22,7 +22,7 @@ Sites with the package installed are notified about new versions in **System →
 - Joomla 6.0 or later
 - PHP 8.3 or later
 - MySQL or MariaDB
-- YOOtheme Pro 5 for the builder element and dynamic fields (optional)
+- YOOtheme Pro 5.0.23 or later for the builder element and dynamic fields (optional)
 
 ## Installation
 
@@ -76,6 +76,10 @@ PowerShell 5.1 or later and PHP 8.3 are required:
     powershell -ExecutionPolicy Bypass -File build.ps1 -Php <path to php>
 
 The build creates `build/pkg_mucronixreviews-<version>.zip`. The same source produces the same archive byte for byte. The checks in `tests/` are not included in the package; see `tests/stand/README.md` for instructions on running them.
+
+## Planned for the next version
+
+Stop words: reviews with words from your list go to moderation instead of being published at once.
 
 ## Support
 

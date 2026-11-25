@@ -2,12 +2,12 @@
 <extension type="component" method="upgrade">
 	<name>com_mucronixreviews</name>
 	<author>Mucronix</author>
-	<creationDate>2026-11</creationDate>
+	<creationDate>2026-11-25</creationDate>
 	<copyright>(C) 2026 Mucronix</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>support@mucronix.com</authorEmail>
 	<authorUrl>https://mucronix.com</authorUrl>
-	<version>0.6.2</version>
+	<version>1.0.0</version>
 	<description>COM_MUCRONIXREVIEWS_XML_DESCRIPTION</description>
 	<namespace path="src">Mucronix\Component\MucronixReviews</namespace>
 	<scriptfile>script.php</scriptfile>
